@@ -1,6 +1,15 @@
 # latent-semantic-indexing
 This Latent Semantic Indexing [ LSI ] model collects, parses, and stores documents to facilitate fast and accurate information retrieval through queries.
 
+#### Indexing:  
+The model creates a term-document frequency matrix from the document corpus.  
+It then uses SVD to get a reduced representation for all terms and documents.  
+(Indexing is usually slower in LSI models. And Index needs to be refreshed everytime you add a new document. LSI models are good where corpus is not updated very frequently.)
+
+#### Retrieval:  
+The user queries are translated to vector representation using the reduced representation.  
+The document vectors with the maximum cosine similarity with the query vector is fetched as result.  
+(Retrieval is very fast in LSI models. Each user query translates to a vector multiplication and a lookup in a dictionay, thus the speed.)
 ```
 SAMPLE RUN
 
